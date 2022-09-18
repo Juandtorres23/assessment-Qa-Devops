@@ -39,4 +39,7 @@ test("removing bot returns to choices", async () => {
    const removeButton = driver.findElement(By.xpath('/html/body/section[2]/section[1]/div/div/button'))
    await removeButton.click();
    await driver.sleep(2000);
+   const choices = driver.findElement(By.id("choices"));
+   const display = await choices.isDisplayed();
+   expect(display).toBe(true);
 });
